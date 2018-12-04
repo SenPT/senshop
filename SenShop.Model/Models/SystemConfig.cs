@@ -14,6 +14,7 @@ namespace SenShop.Model.Models
         [MaxLength(50)]
         public string Code { set; get; }
 
+        [MaxLength(50)]
         public string ValueString { set; get; }
 
         public int? ValueInt { set; get; }

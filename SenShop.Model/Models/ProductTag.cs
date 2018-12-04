@@ -7,10 +7,11 @@ namespace SenShop.Model.Models
     public class ProductTag
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductID { set; get; }
 
-        [Required]
+        [Key]
+        [Column(TypeName ="varchar")]
+        [MaxLength(50)]
         public string TagID { set; get; }
 
         [ForeignKey("TagID")]
