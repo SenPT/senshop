@@ -3,7 +3,7 @@ using SenShop.Model.Models;
 
 namespace SenShop.Data.Repositories
 {
-    public interface IProductRepository
+    public interface IProductRepository : IRepository<Product>
     {
     }
 
