@@ -10,7 +10,7 @@ namespace SenShop.Model.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string ID { set; get; }
+        public int ID { set; get; }
 
         [Required]
         [MaxLength(50)]

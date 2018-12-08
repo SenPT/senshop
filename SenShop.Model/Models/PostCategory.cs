@@ -21,7 +21,7 @@ namespace SenShop.Model.Models
         public string Name { set; get; }
 
         [Required]
-        [Column(TypeName ="varchar")]
+        [Column(TypeName = "varchar")]
         [MaxLength(256)]
         public string Alias { set; get; }
 
