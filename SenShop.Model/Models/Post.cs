@@ -17,11 +17,11 @@ namespace SenShop.Model.Models
 
         [Required]
         [MaxLength(256)]
-        [Column(TypeName ="varchar")]
+        [Column(TypeName = "varchar")]
         public string Alias { set; get; }
 
         [Required]
-        public int CategryID { set; get; }
+        public int CategoryID { set; get; }
 
         [MaxLength(256)]
         public string Image { set; get; }
