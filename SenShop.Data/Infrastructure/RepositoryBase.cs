@@ -49,7 +49,11 @@ namespace SenShop.Data.Infrastructure
         {
             dbSet.Remove(entity);
         }
-
+        public virtual void Delete(int id)
+        {
+            var entiry = dbSet.Find(id);
+            dbSet.Remove(entiry);
+        }
         public virtual void DeleteMulti(Expression<Func<T, bool>> where)
         {
             IEnumerable<T> objects = dbSet.Where<T>(where).AsEnumerable();
