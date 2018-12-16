@@ -1,10 +1,6 @@
 ﻿using SenShop.Data.Infrastructure;
 using SenShop.Model.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Linq;
 
 namespace SenShop.Data.Repositories
@@ -28,11 +24,11 @@ namespace SenShop.Data.Repositories
                         where pt.TagID == tag && p.Status
                         orderby p.CreatedDate descending
                         select p;
-                        
+
             totalRow = query.Count();
             query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
-            return;
+            return query;
         }
     }
 }

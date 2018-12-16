@@ -9,6 +9,7 @@ namespace SenShop.Data
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
+
         public DbSet<Footer> Footers { set; get; }
         public DbSet<Menu> Menus { set; get; }
         public DbSet<MenuGroup> MenuGroups { set; get; }
@@ -29,6 +30,7 @@ namespace SenShop.Data
         public DbSet<Tag> Tags { set; get; }
 
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
+
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
