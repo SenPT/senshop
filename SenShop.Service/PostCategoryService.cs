@@ -2,6 +2,7 @@
 using SenShop.Data.Repositories;
 using SenShop.Model.Models;
 using System.Collections.Generic;
+using System;
 
 namespace SenShop.Service
 {
@@ -18,6 +19,8 @@ namespace SenShop.Service
         IEnumerable<PostCategory> GetAllByParentId(int parentId);
 
         PostCategory GetById(int id);
+
+        void Save();
     }
 
     public class PostCategoryService : IPostCategoryService
@@ -56,9 +59,14 @@ namespace SenShop.Service
             return _postCategoryRepository.GetSingleById(id);
         }
 
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(PostCategory postCategory)
         {
-            _postCategoryRepository.Update(postCategory);
+            _unitOfWork.Commit();
         }
     }
 }
