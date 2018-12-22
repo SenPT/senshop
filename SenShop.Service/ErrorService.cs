@@ -14,7 +14,7 @@ namespace SenShop.Service
         Error Create(Error error);
         void Save();
     }
-    public class ErrorService : IErrorMessage
+    public class ErrorService : IErrorService
     {
         IErrorRepository _errorRepository;
         IUnitOfWork _unitOfWork;
