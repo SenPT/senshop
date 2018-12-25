@@ -1,9 +1,10 @@
-﻿using SenShop.Model.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using SenShop.Model.Models;
 using System.Data.Entity;
 
 namespace SenShop.Data
 {
-    public class SenShopDbContext : DbContext
+    public class SenShopDbContext : IdentityDbContext<ApplicationUser>
     {
         public SenShopDbContext() : base("SenShopConnection")
         {
@@ -32,9 +33,15 @@ namespace SenShop.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errors { set; get; }
 
+        public static SenShopDbContext Create()
+        {
+            return new SenShopDbContext();
+        }
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId , i.RoleId});
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
     }
 }
