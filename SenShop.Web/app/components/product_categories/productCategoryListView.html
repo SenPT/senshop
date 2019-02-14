@@ -28,10 +28,15 @@
                     <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                     </span>
                 </div>
              </div>
+            <div class="col-md-6">
+                <button class="btn btn-success" ui-sref="add_product_category">Thêm mới</button>
+            </div>
         </div>
         </div>
+
         <div class="box-body">
             <div class="row">
                 <div class="col-md-12">
@@ -62,7 +67,7 @@
                         </tr>
                         <tfoot>
                             <tr>
-                                <td colspan="5"><span class="pull-right">Trang: {{page+1}} - Tổng số bản ghi: {{totalCount}}</td>
+                                <td colspan="5"><span class="pull-right"/>Trang: {{page+1}} - Tổng số bản ghi: {{totalCount}}</td>
                             </tr>
                         </tfoot>
                     </table>
