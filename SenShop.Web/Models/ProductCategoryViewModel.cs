@@ -10,11 +10,12 @@ namespace SenShop.Web.Models
     {
         public int ID { set; get; }
 
-        [Required]
+        [Required(ErrorMessage = "Yêu cầu nhập tên danh mục")]
         public string Name { set; get; }
 
-        [Required]
+        [Required(ErrorMessage = "Yêu cầu nhập tiêu đề SEO")]
         public string Alias { set; get; }
+
         public string Description { set; get; }
 
         public int? ParentID { set; get; }
@@ -28,17 +29,20 @@ namespace SenShop.Web.Models
 
         public DateTime? CreatedDate { set; get; }
 
+
         public string CreatedBy { set; get; }
 
         public DateTime? UpdatedDate { set; get; }
 
+
         public string UpdatedBy { set; get; }
+
 
         public string MetaKeyword { set; get; }
 
         public string MetaDescription { set; get; }
 
-        [Required]
+        [Required(ErrorMessage = "Yêu cầu nhập trạng thái")]
         public bool Status { set; get; }
     }
 }
