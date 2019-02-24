@@ -8,11 +8,14 @@ namespace SenShop.Service
 {
     public interface IProductCategoryService
     {
-        void Add(ProductCategory ProductCategory);
+
+        ProductCategory Add(ProductCategory ProductCategory);
+        //void Add(ProductCategory ProductCategory);
 
         void Update(ProductCategory ProductCategory);
 
-        void Delete(int id);
+        ProductCategory Delete(int id);
+        //void Delete(int id);
 
         IEnumerable<ProductCategory> GetAll();
 
@@ -35,17 +38,14 @@ namespace SenShop.Service
             this._ProductCategoryRepository = ProductCategoryRepository;
             this._unitOfWork = unitOfWork;
         }
-
-        public void Add(ProductCategory ProductCategory)
+        public ProductCategory Add(ProductCategory ProductCategory)
         {
-            _ProductCategoryRepository.Add(ProductCategory);
+            return _ProductCategoryRepository.Add(ProductCategory);
         }
-
-        public void Delete(int id)
+        public ProductCategory Delete(int id)
         {
-            _ProductCategoryRepository.Delete(id);
+            return _ProductCategoryRepository.Delete(id);
         }
-
         public IEnumerable<ProductCategory> GetAll()
         {
             return _ProductCategoryRepository.GetAll();
@@ -71,12 +71,12 @@ namespace SenShop.Service
 
         public void Save()
         {
-            throw new NotImplementedException();
+            _unitOfWork.Commit();
         }
 
         public void Update(ProductCategory ProductCategory)
         {
-            _unitOfWork.Commit();
+            _ProductCategoryRepository.Update(ProductCategory);
         }
     }
 }
